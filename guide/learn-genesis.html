@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Genesis block | Zarb</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="Zarb blockchain">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.65636cd6.css" as="style"><link rel="preload" href="/assets/js/app.27d085eb.js" as="script"><link rel="preload" href="/assets/js/2.61508995.js" as="script"><link rel="preload" href="/assets/js/23.9798fecf.js" as="script"><link rel="prefetch" href="/assets/js/10.4429f59e.js"><link rel="prefetch" href="/assets/js/11.c89b3055.js"><link rel="prefetch" href="/assets/js/12.611a52ec.js"><link rel="prefetch" href="/assets/js/13.bef466d6.js"><link rel="prefetch" href="/assets/js/14.3277b505.js"><link rel="prefetch" href="/assets/js/15.ce20c172.js"><link rel="prefetch" href="/assets/js/16.e5f0cb92.js"><link rel="prefetch" href="/assets/js/17.10ca57f5.js"><link rel="prefetch" href="/assets/js/18.136106c9.js"><link rel="prefetch" href="/assets/js/19.e9f115dd.js"><link rel="prefetch" href="/assets/js/20.a9ffe254.js"><link rel="prefetch" href="/assets/js/21.62eaa5eb.js"><link rel="prefetch" href="/assets/js/22.cab0cea5.js"><link rel="prefetch" href="/assets/js/24.cc7c47d8.js"><link rel="prefetch" href="/assets/js/25.2cfcd951.js"><link rel="prefetch" href="/assets/js/26.d3072d0b.js"><link rel="prefetch" href="/assets/js/27.2fa77476.js"><link rel="prefetch" href="/assets/js/28.8b651b78.js"><link rel="prefetch" href="/assets/js/29.dcaef3e4.js"><link rel="prefetch" href="/assets/js/3.6ad63990.js"><link rel="prefetch" href="/assets/js/30.e68d4fea.js"><link rel="prefetch" href="/assets/js/31.d55135aa.js"><link rel="prefetch" href="/assets/js/32.125ed9d4.js"><link rel="prefetch" href="/assets/js/33.d581791a.js"><link rel="prefetch" href="/assets/js/34.001d140b.js"><link rel="prefetch" href="/assets/js/35.6e32cf2f.js"><link rel="prefetch" href="/assets/js/36.0b005606.js"><link rel="prefetch" href="/assets/js/37.164162a7.js"><link rel="prefetch" href="/assets/js/38.45f6a28a.js"><link rel="prefetch" href="/assets/js/4.540a521d.js"><link rel="prefetch" href="/assets/js/5.a9d5a2b6.js"><link rel="prefetch" href="/assets/js/6.87638707.js"><link rel="prefetch" href="/assets/js/7.b072c58f.js"><link rel="prefetch" href="/assets/js/8.ffd358d2.js"><link rel="prefetch" href="/assets/js/9.17e9dccd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.65636cd6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Zarb</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/learn-index.html" class="nav-link">
+  What is Zarb
+</a></div><div class="nav-item"><a href="/guide/run-index.html" class="nav-link">
+  Get started
+</a></div><div class="nav-item"><a href="https://github.com/zarbchain/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/learn-index.html" class="nav-link">
+  What is Zarb
+</a></div><div class="nav-item"><a href="/guide/run-index.html" class="nav-link">
+  Get started
+</a></div><div class="nav-item"><a href="https://github.com/zarbchain/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Learn</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/learn-index.html" class="sidebar-link">What is Zarb?</a></li><li><a href="/guide/learn-cryptography.html" class="sidebar-link">Cryptography</a></li><li><a href="/guide/learn-serialization.html" class="sidebar-link">Data serialization</a></li><li><a href="/guide/learn-genesis.html" aria-current="page" class="active sidebar-link">Genesis block</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Consensus protocol</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/guide/learn-block.html" class="sidebar-link">Block</a></li><li><a href="/guide/learn-certificate.html" class="sidebar-link">Block certificate</a></li><li><a href="/guide/learn-account.html" class="sidebar-link">Account</a></li><li><a href="/guide/learn-validator.html" class="sidebar-link">Validator</a></li><li><a href="/guide/learn-committee.html" class="sidebar-link">Committee</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Transactions</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/guide/learn-incentive.html" class="sidebar-link">Incentive</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Run</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/run-index.html" class="sidebar-link">Getting started</a></li><li><a href="/guide/run-testnet.html" class="sidebar-link">TestNets history</a></li><li><a href="/guide/run-compile.html" class="sidebar-link">Compile Zarb</a></li><li><a href="/guide/run-docker.html" class="sidebar-link">Using Docker</a></li><li><a href="/guide/run-become-validator.html" class="sidebar-link">Become a validator</a></li><li><a href="/guide/run-ansible.html" class="sidebar-link">Deploy using Ansible</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="genesis-block"><a href="#genesis-block" class="header-anchor">#</a> Genesis block</h1> <h2 id="what-is-genesis-block"><a href="#what-is-genesis-block" class="header-anchor">#</a> What is genesis block</h2> <p>The genesis block is the first block in blockchain.</p> <h2 id="genesis-information"><a href="#genesis-information" class="header-anchor">#</a> Genesis information</h2> <p>In Zarb genesis information is defined inside the <code>genesis.json</code> file. It contains the consensus
+parameters like size of validator set or fee settings. It also defines the Treasury account and
+bootstrap validators information. Here is the <code>genesis.json</code> file for the MainNet in Zarb:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;GenesisTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2021-04-07T00:00:00Z&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;Params&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;BlockVersion&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;BlockTimeInSecond&quot;</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;CommitteeSize&quot;</span><span class="token operator">:</span> <span class="token number">21</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;BlockReward&quot;</span><span class="token operator">:</span> <span class="token number">100000000</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;TransactionToLiveInterval&quot;</span><span class="token operator">:</span> <span class="token number">8640</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;UnbondInterval&quot;</span><span class="token operator">:</span> <span class="token number">181440</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;MaximumTransactionPerBlock&quot;</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;MaximumMemoLength&quot;</span><span class="token operator">:</span> <span class="token number">64</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;FeeFraction&quot;</span><span class="token operator">:</span> <span class="token number">0.001</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;MinimumFee&quot;</span><span class="token operator">:</span> <span class="token number">1000</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;Accounts&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;Address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0000000000000000000000000000000000000000&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;Balance&quot;</span><span class="token operator">:</span> <span class="token number">2100000000000000</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;Validators&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;PublicKey&quot;</span><span class="token operator">:</span> <span class="token string">&quot;594ac38ee38949356e139340cd9668f48d908e76b44781e7013e3f70b738a9b6b53e95dfcba23bd1bbe923d2df354815986643467f25b755d76a908c0dca20327cc111e16d30f37041a23417f8d7cb446cc891c551176df641f07c1f4e1e068b&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;PublicKey&quot;</span><span class="token operator">:</span> <span class="token string">&quot;332f2f3a6250b7ff955cd73a0b43e567e82b1e6f4e5ace219b74408deefe995b96481d673ce99b20ce62c2177c05880b37b42d3d63f6e7a951492166e74cec3625870582f4a8b8b135abeb4dd171455a2a4a413b79a50b7ace4f8a3123b1ed8f&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;PublicKey&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0fe092c870d0cee720a30388e40f14ec2df38526e3db040efd30d2b59df1afd5b25568b87806799c829cd65659a84e193f1dfbb67e9aea6eefd4fbf9dd6ddaac694d59efba0df6aba336c1e373d0228514481edf9cce376933a05a9d8e60830f&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;PublicKey&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2a59438cb5790fa9d0d3c584e54dfc6f41f998b0bbd5297ea74d5a1b62b1022f222ee1c966fcc060ef199bd867d0d80b416a10423b070d3dd5d4c8d32678b9a686703fe818ba662162416389965579162134c622a9d90d10fb508eef03c38d92&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/zarbchain/zarb.network/edit/main/docs/guide/learn-genesis.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/3/2021, 7:58:04 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/learn-serialization.html" class="prev">
+        Data serialization
+      </a></span> <span class="next"><a href="/guide/consensus-zarb.html">
+        Consensus mechanism
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.27d085eb.js" defer></script><script src="/assets/js/2.61508995.js" defer></script><script src="/assets/js/23.9798fecf.js" defer></script>
+  </body>
+</html>

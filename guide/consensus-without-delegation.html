@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Consensus Without delegation | Zarb</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="Zarb blockchain">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.65636cd6.css" as="style"><link rel="preload" href="/assets/js/app.27d085eb.js" as="script"><link rel="preload" href="/assets/js/2.61508995.js" as="script"><link rel="preload" href="/assets/js/9.17e9dccd.js" as="script"><link rel="prefetch" href="/assets/js/10.4429f59e.js"><link rel="prefetch" href="/assets/js/11.c89b3055.js"><link rel="prefetch" href="/assets/js/12.611a52ec.js"><link rel="prefetch" href="/assets/js/13.bef466d6.js"><link rel="prefetch" href="/assets/js/14.3277b505.js"><link rel="prefetch" href="/assets/js/15.ce20c172.js"><link rel="prefetch" href="/assets/js/16.e5f0cb92.js"><link rel="prefetch" href="/assets/js/17.10ca57f5.js"><link rel="prefetch" href="/assets/js/18.136106c9.js"><link rel="prefetch" href="/assets/js/19.e9f115dd.js"><link rel="prefetch" href="/assets/js/20.a9ffe254.js"><link rel="prefetch" href="/assets/js/21.62eaa5eb.js"><link rel="prefetch" href="/assets/js/22.cab0cea5.js"><link rel="prefetch" href="/assets/js/23.9798fecf.js"><link rel="prefetch" href="/assets/js/24.cc7c47d8.js"><link rel="prefetch" href="/assets/js/25.2cfcd951.js"><link rel="prefetch" href="/assets/js/26.d3072d0b.js"><link rel="prefetch" href="/assets/js/27.2fa77476.js"><link rel="prefetch" href="/assets/js/28.8b651b78.js"><link rel="prefetch" href="/assets/js/29.dcaef3e4.js"><link rel="prefetch" href="/assets/js/3.6ad63990.js"><link rel="prefetch" href="/assets/js/30.e68d4fea.js"><link rel="prefetch" href="/assets/js/31.d55135aa.js"><link rel="prefetch" href="/assets/js/32.125ed9d4.js"><link rel="prefetch" href="/assets/js/33.d581791a.js"><link rel="prefetch" href="/assets/js/34.001d140b.js"><link rel="prefetch" href="/assets/js/35.6e32cf2f.js"><link rel="prefetch" href="/assets/js/36.0b005606.js"><link rel="prefetch" href="/assets/js/37.164162a7.js"><link rel="prefetch" href="/assets/js/38.45f6a28a.js"><link rel="prefetch" href="/assets/js/4.540a521d.js"><link rel="prefetch" href="/assets/js/5.a9d5a2b6.js"><link rel="prefetch" href="/assets/js/6.87638707.js"><link rel="prefetch" href="/assets/js/7.b072c58f.js"><link rel="prefetch" href="/assets/js/8.ffd358d2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.65636cd6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Zarb</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/learn-index.html" class="nav-link">
+  What is Zarb
+</a></div><div class="nav-item"><a href="/guide/run-index.html" class="nav-link">
+  Get started
+</a></div><div class="nav-item"><a href="https://github.com/zarbchain/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/learn-index.html" class="nav-link">
+  What is Zarb
+</a></div><div class="nav-item"><a href="/guide/run-index.html" class="nav-link">
+  Get started
+</a></div><div class="nav-item"><a href="https://github.com/zarbchain/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Learn</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/learn-index.html" class="sidebar-link">What is Zarb?</a></li><li><a href="/guide/learn-cryptography.html" class="sidebar-link">Cryptography</a></li><li><a href="/guide/learn-serialization.html" class="sidebar-link">Data serialization</a></li><li><a href="/guide/learn-genesis.html" class="sidebar-link">Genesis block</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>Consensus protocol</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/consensus-zarb.html" class="sidebar-link">Consensus mechanism</a></li><li><a href="/guide/consensus-state-machine.html" class="sidebar-link">Consensus as state machine</a></li><li><a href="/guide/consensus-without-delegation.html" aria-current="page" class="active sidebar-link">Consensus Without delegation</a></li><li><a href="/guide/consensus-sortition.html" class="sidebar-link">Sortition algorithm</a></li><li><a href="/guide/consensus-seed.html" class="sidebar-link">Sortition Seed</a></li></ul></section></li><li><a href="/guide/learn-block.html" class="sidebar-link">Block</a></li><li><a href="/guide/learn-certificate.html" class="sidebar-link">Block certificate</a></li><li><a href="/guide/learn-account.html" class="sidebar-link">Account</a></li><li><a href="/guide/learn-validator.html" class="sidebar-link">Validator</a></li><li><a href="/guide/learn-committee.html" class="sidebar-link">Committee</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Transactions</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/guide/learn-incentive.html" class="sidebar-link">Incentive</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Run</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/run-index.html" class="sidebar-link">Getting started</a></li><li><a href="/guide/run-testnet.html" class="sidebar-link">TestNets history</a></li><li><a href="/guide/run-compile.html" class="sidebar-link">Compile Zarb</a></li><li><a href="/guide/run-docker.html" class="sidebar-link">Using Docker</a></li><li><a href="/guide/run-become-validator.html" class="sidebar-link">Become a validator</a></li><li><a href="/guide/run-ansible.html" class="sidebar-link">Deploy using Ansible</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="consensus-without-delegation"><a href="#consensus-without-delegation" class="header-anchor">#</a> Consensus Without delegation</h1> <h2 id="proof-of-stake"><a href="#proof-of-stake" class="header-anchor">#</a> Proof of stake</h2> <p>Zarb is a real proof of stake blockchain. Proof of Stake is a way to secure the network through
+requesting users to stake some amount of their coins.</p> <h2 id="a-paradox"><a href="#a-paradox" class="header-anchor">#</a> A paradox</h2> <p>Unlike Proof of Work, which is based on competition between miners, Proof of Stake is based on
+cooperation between validators. Validators work together to validate a block, like a team or
+committee. A good player will be incentivized and a bad actor will be punished and fired from the
+team. However, the question is how big this team or committee can be?</p> <p>If your committee gets bigger and bigger, the voting time will be longer and longer and also the
+committee will be more vulnerable in network partition attack. For example, some calculation shows
+that with more than 100 validators, PoS blockchain becomes less efficient. On the other hand a small
+committee of validators makes blockchain insecure and vulnerable to attacks. A PoS blockchain will
+be more secure and decentralized if more validators participated in it. This creates a paradox in
+PoS blockchain, We can't get big, but we need to get big!</p> <p>The block size also is another issue when the number of validators increases. Validators must put
+their signature information in each block as proof of the commitment. As long as more than 2/3 of
+validators sign a block, the block will be committed into the blockchain. Increasing the size of the
+committee will increase the size of the blocks and therefore blockchain gets bigger. Some blockchain
+solves this issue by defining archive nodes. But archive nodes tend to be centralized which is
+against the blockchain philosophy: Nothing should be centralized.</p> <h2 id="delegated-proof-of-stake"><a href="#delegated-proof-of-stake" class="header-anchor">#</a> Delegated Proof of Stake</h2> <p>Some blockchains address this paradox by defining delegation. In Delegated Proof of Stake (dPoS)
+people put their stakes in the hands of a group of ‘delegates’ and these delegates validate
+transactions and produce blocks.</p> <p>But how can voters trust a delegate? If a delegate is acting badly, what will happen? You can stake
+your token in favor of good actors. But you still need a minimum trust on this platform. But again
+this against blockchain philosophy, trust nobody.</p> <p>For example in the EOS blockchain, there is
+<a href="https://github.com/EOSIO/eos/blob/5068823fbc8a8f7d29733309c0496438c339f7dc/constitution.md" target="_blank" rel="noopener noreferrer">constitution<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+for the people participating in the blockchain. This constitution is full of “shall” and “shall
+not”. In the long run, the blockchain will be ruled by a powerful organization and won’t be
+decentralized anymore.</p> <p><img src="/assets/img/delegated_proof_of_stake.57018319.png" alt="Delegated Proof of Stake"></p> <h2 id="zarb-has-no-delegation"><a href="#zarb-has-no-delegation" class="header-anchor">#</a> Zarb has no delegation</h2> <p>The solution we are offering in Zarb is creating a <strong>dynamic set</strong> of validators. Validators can be
+changed randomly. Anyone can easily become a validator by staking some tokens. At each height, every
+validator starts running a Verifiable Random Function (VRF) in order to self-choose themselves. The
+VRF is unpredictable and the result can be verified cryptographically by other validators.</p> <p>Based on their stake and their luck, a validator can be in the <a href="./learn-committee">committee</a> for
+the next run. Once a validator enters the set, the oldest validator in the set exits. So we can
+always guarantee that validators are in the set for a certain amount of time. In the set,
+validators' vote is weighted by their stake.</p> <p><img src="/assets/img/zarb_validator_pool.666de966.png" alt="Zarb Proof of Stake"></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/zarbchain/zarb.network/edit/main/docs/guide/consensus-without-delegation.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/3/2021, 7:58:04 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/consensus-state-machine.html" class="prev">
+        Consensus as state machine
+      </a></span> <span class="next"><a href="/guide/consensus-sortition.html">
+        Sortition algorithm
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.27d085eb.js" defer></script><script src="/assets/js/2.61508995.js" defer></script><script src="/assets/js/9.17e9dccd.js" defer></script>
+  </body>
+</html>
